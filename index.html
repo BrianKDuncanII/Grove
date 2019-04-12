@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet"> 
+
+	<script src="https://unpkg.com/popper.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="master.js"></script>
+	<script src="jquery.js"></script>
+	<script src="odometer.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="stylesheet" href="odometer-theme-minimal.css">
+
+	<title>Grove - Plants Are Alive</title>
+
+	<div id="title_bar">
+		<div id="title_bar_top">
+		<h1 id="title">Grove</h1>
+		</div>
+		<div id="title_bar_bottom" style="margin-top: -10px; height: 10px;"></div>
+	</div>
+</head>
+
+<body>
+	<div style="float: right; margin-right: 300px;">
+		<h1>Test</h1>
+	</div>
+
+	<div style="margin: 25px;">
+		<h5>You are a sapling in a field of green.</h5>
+		<i style="margin-right: 10px; color: rgb(120, 237, 167);" class="fas fa-leaf"></i>
+		<h4 style="display: inline">Leaves: </h4>
+		<h4 id="leaf_counter" class="odometer">0</h4>
+		<p id="leavesPerSecond_counter">(0 Leaves/Sec)</p>
+
+		<button id="grow_leaf" style="background-color: #837a75;" type="button" class="btn btn-light" onClick="growLeaf()">Grow Leaf</button>
+		<div style="margin-top: 5px;">
+			<i class="fas fa-seedling"></i>
+			<h5 id="seed_counter">Seeds: 0</h5>
+		</div>
+
+		<div style="margin-top: 5px;">
+			<i class="fas fa-seedling"></i>
+			<h5 id="sapling_counter">Saplings: 0</h5>
+		</div>
+	</div>
+
+	<div id="content"></div>
+
+	<div id="test">
+		<div class="scale-in-center" id="seed_item"
+			style="visibility: hidden; background-color: rgb(244, 244, 244); margin-left: 25px; width: 300px; height: 145px;"">
+			<h4 data-toggle=" tooltip" title="The beginning of life" data-placement="top" style="text-decoration: underline;">
+			Seed</h4>
+			<h6 style="font-style: italic; ">Produces saplings to grow more leaves.</h6>
+			<h6 id="seed_cost">Costs: 25 leaves</h6>
+			<button id="buy_seed" onClick="buySeed()" type="button" class="btn btn-success">Buy</button>
+			<button id="sell_seed" onClick="sellSeed()" type="button" class="btn btn-danger">Sell</button>
+		</div>
+	</div>
+
+	<div style="margin-left: 25px;">
+		<h3 style="text-decoration: underline;">Upgrades</h3>
+	</div>
+
+	<div>
+		<button style="margin-left: 25px;" data-html="true" data-toggle="tooltip" data-placement="top" title="Cost: 50 Leaves <br> Gives you access to settings" type="button" class="btn btn-outline-primary"><i style="margin-right: 5px;" class="fas fa-cogs"></i>Settings <br>50 Leaves</button>
+	</div>
+
+	<div style="margin-top: 10px;">
+			<button style="margin-left: 25px;" data-html="true" data-toggle="tooltip" data-placement="top" title="Cost: 200 Leaves <br> Saplings produce x2 leaves" type="button" class="btn btn-outline-primary"><i style="margin-right: 5px;" class="fas fa-seedling"></i>Fertilizer <br>200 Leaves</button>
+		</div>
+</body>
